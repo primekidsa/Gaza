@@ -3,58 +3,53 @@
 :root {
     --gazprom-blue: #0070ba;
     --gazprom-dark: #004a7c;
-    --bg-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=2000');
 }
 
 body { 
     font-family: 'Plus Jakarta Sans', sans-serif; 
     scroll-behavior: smooth;
-    background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.98)), var(--bg-image);
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+    background: #0f172a;
     color: #fff;
     min-height: 100vh;
 }
 
 .glass-nav {
-    background: rgba(15, 23, 42, 0.75);
+    background: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.hero-gradient {
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.8));
-    backdrop-filter: blur(15px);
-}
-
 .product-card {
     background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .product-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-10px);
     border-color: var(--gazprom-blue);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .btn-primary {
     background: linear-gradient(135deg, var(--gazprom-blue), var(--gazprom-dark));
-    box-shadow: 0 4px 20px rgba(0, 112, 186, 0.4);
 }
 
-.custom-scrollbar::-webkit-scrollbar { width: 5px; }
-.custom-scrollbar::-webkit-scrollbar-thumb { 
-    background: rgba(255, 255, 255, 0.1); 
-    border-radius: 10px; 
+.overlay-fade { 
+    animation: fadeIn 0.5s forwards; 
 }
 
-@keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
-.cart-open { animation: slideIn 0.3s ease-out; }
+@keyframes fadeIn { 
+    from { opacity: 0; } 
+    to { opacity: 1; } 
+}
 
-.modal-active { display: flex !important; animation: fadeIn 0.3s ease-out; }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+/* Кастомный скроллбар для корзины */
+#cart-items::-webkit-scrollbar {
+    width: 4px;
+}
+#cart-items::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
