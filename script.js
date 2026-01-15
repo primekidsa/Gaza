@@ -1,23 +1,30 @@
+// Массив с реальными данными и фото товаров
 const products = [
-    { id: 1, category: "Моторные масла", name: "G-Energy Super Start 5W-30", price: 4250, shortDesc: "Синтетика для двигателей с DPF.", fullDesc: "Премиальное синтетическое масло для современных бензиновых и дизельных двигателей.", specs: { "Вязкость": "5W-30", "ACEA": "C3", "API": "SN/CF" }, img: "https://shop.gazpromneft-oil.ru/upload/iblock/c38/c3866170d195e28236173059287a992a.png" },
-    { id: 2, category: "Моторные масла", name: "Gazpromneft Premium N 5W-40", price: 3800, shortDesc: "Высокоэффективная синтетика.", fullDesc: "Обеспечивает надежную защиту двигателя и чистоту деталей в тяжелых условиях.", specs: { "Вязкость": "5W-40", "API": "SN/CF" }, img: "https://shop.gazpromneft-oil.ru/upload/iblock/510/5105e60802c6114e9185a53826040685.png" },
-    { id: 3, category: "Смазки", name: "Gazpromneft Grease L EP 2", price: 950, shortDesc: "Литиевая смазка.", fullDesc: "Для узлов трения, работающих при высоких нагрузках и температурах.", specs: { "NLGI": "2", "Температура": "-30..+120°C" }, img: "https://shop.gazpromneft-oil.ru/upload/iblock/d4b/d4b14d35f41097240f906f3684a8966c.png" },
-    { id: 4, category: "Тяжелая техника", name: "G-Profi MSI 10W-40 (20л)", price: 13200, shortDesc: "Для дизелей SHPD.", fullDesc: "Масло для магистральных тягачей, автобусов и внедорожной техники.", specs: { "Объем": "20л", "Класс": "CI-4/SL" }, img: "https://shop.gazpromneft-oil.ru/upload/iblock/035/0358e0a3904a08153098380482555547.png" },
-    { id: 5, category: "Трансмиссия", name: "G-Box Expert 75W-90", price: 2100, shortDesc: "Для МКПП и мостов.", fullDesc: "Защищает синхронизаторы и шестерни от износа.", specs: { "Класс": "GL-4", "Тип": "Полусинтетика" }, img: "https://shop.gazpromneft-oil.ru/upload/iblock/d03/d03d36b8568903e1e2d480e6c6411520.png" },
-    { id: 6, category: "Антифризы", name: "Antifreeze BS 40 (5кг)", price: 1650, shortDesc: "Готовый синий антифриз.", fullDesc: "Защита системы охлаждения до -40°C.", specs: { "Цвет": "Синий", "Срок": "2 года" }, img: "https://shop.gazpromneft-oil.ru/upload/iblock/a87/a8790117a42f61e7a505b2a09c25b340.png" }
+    { id: 1, category: "Моторные масла", name: "G-Energy Super Start 5W-30", price: 4250, shortDesc: "Синтетика для двигателей с DPF.", fullDesc: "Премиальное синтетическое масло для современных бензиновых и дизельных двигателей. Оптимизировано для систем очистки выхлопных газов.", specs: { "Вязкость": "5W-30", "ACEA": "C3", "API": "SN/CF" }, img: "https://shop.gazpromneft-oil.ru/upload/iblock/c38/c3866170d195e28236173059287a992a.png" },
+    { id: 2, category: "Моторные масла", name: "Gazpromneft Premium N 5W-40", price: 3800, shortDesc: "Универсальная синтетика.", fullDesc: "Обеспечивает надежную защиту двигателя в различных режимах эксплуатации.", specs: { "Вязкость": "5W-40", "API": "SN/CF" }, img: "https://shop.gazpromneft-oil.ru/upload/iblock/510/5105e60802c6114e9185a53826040685.png" },
+    { id: 3, category: "Смазки", name: "Grease L EP 2 (400г)", price: 950, shortDesc: "Многоцелевая литиевая смазка.", fullDesc: "Для узлов трения промышленного оборудования и транспорта.", specs: { "NLGI": "2", "Температура": "-30..+120°C" }, img: "https://shop.gazpromneft-oil.ru/upload/iblock/d4b/d4b14d35f41097240f906f3684a8966c.png" },
+    { id: 4, category: "Тяжелая техника", name: "G-Profi MSI 10W-40 (20л)", price: 13200, shortDesc: "Для мощных дизелей SHPD.", fullDesc: "Разработано для высоконагруженных двигателей Евро-4/5.", specs: { "Объем": "20л", "Класс": "CI-4/SL" }, img: "https://shop.gazpromneft-oil.ru/upload/iblock/035/0358e0a3904a08153098380482555547.png" },
+    { id: 5, category: "Трансмиссия", name: "G-Box Expert 75W-90", price: 2100, shortDesc: "Для МКПП и мостов.", fullDesc: "Обеспечивает плавное переключение передач и защиту узлов.", specs: { "Класс": "GL-4", "Тип": "Полусинтетика" }, img: "https://shop.gazpromneft-oil.ru/upload/iblock/d03/d03d36b8568903e1e2d480e6c6411520.png" },
+    { id: 6, category: "Антифризы", name: "Antifreeze BS 40 (5кг)", price: 1650, shortDesc: "Готовый синий антифриз.", fullDesc: "Эффективная защита от коррозии и кавитации до -40°C.", specs: { "Цвет": "Синий", "Срок": "2 года" }, img: "https://shop.gazpromneft-oil.ru/upload/iblock/a87/a8790117a42f61e7a505b2a09c25b340.png" }
 ];
 
-let cart = JSON.parse(localStorage.getItem('gp_premium_v7')) || {};
+// Данные для бота менеджера (ЗАМЕНИ НА СВОИ)
+const BOT_TOKEN = '8510654671:AAGgL6_C193WcVMN1DyZXdND2U3LHtWfd3A'; 
+const ADMIN_CHAT_ID = '8485387955';
 
+let cart = JSON.parse(localStorage.getItem('gp_premium_v8')) || {};
+
+// Отрисовка товаров в каталоге
 function renderProducts() {
     const grid = document.getElementById('product-grid');
+    if (!grid) return;
     grid.innerHTML = products.map(p => {
         const inCart = cart[p.id] ? cart[p.id].qty : 0;
         return `
         <div class="product-card p-4 rounded-[1.5rem] flex flex-col relative cursor-pointer" onclick="openProductModal(${p.id})">
             ${inCart > 0 ? `<div class="absolute top-3 left-3 bg-[#0070ba] text-white px-2 py-0.5 rounded-lg text-[10px] font-bold z-10 shadow-lg border border-white/20">В КОРЗИНЕ: ${inCart}</div>` : ''}
             <div class="h-32 mb-4 flex items-center justify-center">
-                <img src="${p.img}" class="max-h-full object-contain pointer-events-none drop-shadow-2xl transition duration-500 hover:scale-110" onerror="this.src='https://via.placeholder.com/200?text=Gazprom'">
+                <img src="${p.img}" class="max-h-full object-contain pointer-events-none drop-shadow-2xl transition duration-500 hover:scale-110">
             </div>
             <div class="text-[9px] text-blue-400 font-bold uppercase mb-1 tracking-[0.1em]">${p.category}</div>
             <h3 class="font-bold text-white text-[13px] mb-1 h-8 line-clamp-2 leading-tight">${p.name}</h3>
@@ -39,6 +46,7 @@ function renderProducts() {
     }).join('');
 }
 
+// Обновление интерфейса корзины
 function updateUI() {
     const itemsDiv = document.getElementById('cart-items');
     let total = 0, count = 0;
@@ -49,7 +57,7 @@ function updateUI() {
         total += item.price * item.qty; count += item.qty;
         itemsDiv.innerHTML += `
             <div class="flex items-center gap-3 bg-white/95 p-3 rounded-2xl border border-white/10 shadow-xl">
-                <img src="${item.img}" class="w-12 h-12 object-contain" onerror="this.src='https://via.placeholder.com/50'">
+                <img src="${item.img}" class="w-12 h-12 object-contain">
                 <div class="flex-grow">
                     <div class="text-[11px] text-[#004a7c] font-extrabold line-clamp-1 uppercase tracking-tight">${item.name}</div>
                     <div class="text-[#0070ba] font-black text-xs">${item.price.toLocaleString()} ₽</div>
@@ -62,10 +70,12 @@ function updateUI() {
             </div>`;
     }
     document.getElementById('cart-count').innerText = count;
-    document.getElementById('total-price').innerText = total.toLocaleString() + ' ₽';
+    const totalElement = document.getElementById('total-price');
+    if (totalElement) totalElement.innerText = total.toLocaleString() + ' ₽';
     if(count === 0) itemsDiv.innerHTML = '<div class="text-center py-20 text-slate-500 text-xs uppercase font-bold tracking-widest">Корзина пуста</div>';
 }
 
+// Открытие модального окна товара
 function openProductModal(id) {
     const p = products.find(x => x.id === id);
     document.getElementById('modal-img').src = p.img;
@@ -86,6 +96,7 @@ function closeProductModal() {
     document.body.style.overflow = 'auto'; 
 }
 
+// Функции корзины
 function addToCart(id) {
     if (!cart[id]) cart[id] = { ...products.find(x => x.id === id), qty: 1 };
     else cart[id].qty++;
@@ -101,7 +112,7 @@ function changeQty(id, delta) {
 }
 
 function save() {
-    localStorage.setItem('gp_premium_v7', JSON.stringify(cart));
+    localStorage.setItem('gp_premium_v8', JSON.stringify(cart));
     updateUI();
     renderProducts();
 }
@@ -112,14 +123,38 @@ function toggleCart() {
     m.style.display = isHidden ? 'none' : 'flex';
 }
 
-function checkoutTelegram() {
+// Оформление заказа и уведомление менеджера
+async function checkoutTelegram() {
     if (Object.keys(cart).length === 0) return;
-    let msg = "🛒 НОВЫЙ ЗАКАЗ ГАЗПРОМ:\n\n";
-    for (let id in cart) msg += `🔹 ${cart[id].name} — ${cart[id].qty} шт.\n`;
-    msg += `\n💰 ИТОГО: ${document.getElementById('total-price').innerText}`;
-    window.open(`https://t.me/whitebles?text=${encodeURIComponent(msg)}`, '_blank');
+
+    let orderMsg = "📦 <b>НОВЫЙ ЗАКАЗ ГАЗПРОМ</b>\n\n";
+    let total = document.getElementById('total-price').innerText;
+    
+    for (let id in cart) {
+        orderMsg += `🔹 ${cart[id].name}\n   Кол-во: ${cart[id].qty} шт.\n\n`;
+    }
+    orderMsg += `💰 <b>Итого: ${total}</b>`;
+
+    // 1. Отправка скрытого уведомления менеджеру в бот
+    try {
+        await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                chat_id: ADMIN_CHAT_ID,
+                text: orderMsg,
+                parse_mode: 'HTML'
+            })
+        });
+    } catch (e) {
+        console.error("Ошибка уведомления менеджера", e);
+    }
+
+    // 2. Открытие чата Telegram для клиента
+    window.open(`https://t.me/whitebles?text=${encodeURIComponent(orderMsg.replace(/<[^>]*>/g, ''))}`, '_blank');
 }
 
+// Запуск при загрузке
 document.addEventListener('DOMContentLoaded', () => {
     renderProducts();
     updateUI();
